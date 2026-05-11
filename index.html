@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yum Yum Pizza | يم يم بيتزا</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-red: #d32f2f;
+            --dark-red: #b71c1c;
+            --light-bg: #f8f9fa;
+            --text-dark: #333;
+        }
+        * { box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+        body { margin: 0; padding: 0; background-color: #e9ecef; color: var(--text-dark); }
+        
+        /* الهيدر */
+        header { background: var(--main-red); color: white; text-align: center; padding: 15px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        header h1 { margin: 0; font-size: 32px; font-weight: 900; letter-spacing: 2px; }
+        header p { margin: 5px 0 0; font-size: 14px; }
+
+        /* منطقة الاتصال */
+        .alert-box { background: #ffeb3b; color: #b71c1c; text-align: center; padding: 12px; font-weight: bold; font-size: 18px; border-bottom: 3px solid #fbc02d; }
+        .branches-container { background: white; padding: 20px 10px; text-align: center; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .branches-container h3 { margin-top: 0; color: var(--text-dark); }
+        .branch-btn { 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: var(--main-red); color: white; text-decoration: none; 
+            padding: 15px; margin: 10px auto; width: 90%; max-width: 400px; 
+            border-radius: 10px; font-size: 18px; font-weight: bold; 
+            box-shadow: 0 4px 6px rgba(211, 47, 47, 0.3); transition: 0.2s;
+        }
+        .branch-btn:active { transform: scale(0.98); }
+        .branch-btn span { font-size: 22px; margin-top: 5px; color: #ffc107; letter-spacing: 1px; }
+
+        /* أقسام المنيو */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 10px; }
+        .menu-section { background: white; margin-bottom: 25px; border-radius: 12px; padding: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); overflow: hidden; }
+        .section-title { color: var(--main-red); border-bottom: 3px solid var(--main-red); padding-bottom: 10px; margin-top: 0; font-size: 24px; text-align: center; }
+        
+        /* الجداول (للبيتزا والفطير) */
+        .table-responsive { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: center; font-size: 14px; min-width: 500px; }
+        th { background: var(--main-red); color: white; padding: 10px; border: 1px solid #ddd; }
+        td { padding: 10px; border: 1px solid #ddd; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .item-name-cell { text-align: right; background: #ffebee; color: var(--dark-red); width: 30%; }
+
+        /* القوائم العادية (المقبلات والباستا) */
+        .simple-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+        .simple-item { display: flex; justify-content: space-between; padding: 12px; border-bottom: 1px dashed #ccc; align-items: center; }
+        .simple-item:last-child { border-bottom: none; }
+        .s-name { font-weight: bold; font-size: 16px; }
+        .s-price { color: var(--main-red); font-weight: 900; font-size: 18px; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>YUM YUM PIZZA</h1>
+        <p>بيتزا - باستا - فطير</p>
+    </header>
+
+    <div class="alert-box">
+        ⚠️ تنبيه: الطلب عبر المكالمات التليفونية فقط ⚠️
+    </div>
+
+    <div class="branches-container">
+        <h3>📞 اضغط على الفرع للاتصال والطلب فوراً</h3>
+        
+        <a href="tel:01271111895" class="branch-btn">
+            فرع المهندسين والدقي
+            <span>01271111895</span>
+        </a>
+        
+        <a href="tel:01015939133" class="branch-btn">
+            فرع الهرم
+            <span>01015939133</span>
+        </a>
+    </div>
+
+    <div class="container">
+
+        <div class="menu-section">
+            <h2 class="section-title">🍕 ركن البيتزا (Pizza)</h2>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th rowspan="2">نوع البيتزا</th>
+                        <th colspan="3">بان أو كلاسيك</th>
+                        <th colspan="2">ستافت كراست</th>
+                    </tr>
+                    <tr>
+                        <th>صغير S</th><th>وسط M</th><th>كبير L</th>
+                        <th>وسط M</th><th>كبير L</th>
+                    </tr>
+                    <tr><td class="item-name-cell">مارجريتا</td><td>100</td><td>145</td><td>185</td><td>195</td><td>235</td></tr>
+                    <tr><td class="item-name-cell">ميكس جبن</td><td>120</td><td>180</td><td>250</td><td>230</td><td>300</td></tr>
+                    <tr><td class="item-name-cell">خضار</td><td>110</td><td>155</td><td>205</td><td>205</td><td>255</td></tr>
+                    <tr><td class="item-name-cell">سوبر سوبريم</td><td>135</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                    <tr><td class="item-name-cell">حارة (Spicy)</td><td>130</td><td>180</td><td>255</td><td>230</td><td>305</td></tr>
+                    <tr><td class="item-name-cell">هوت دوج</td><td>130</td><td>180</td><td>255</td><td>230</td><td>305</td></tr>
+                    <tr><td class="item-name-cell">كرات اللحم</td><td>130</td><td>180</td><td>255</td><td>230</td><td>305</td></tr>
+                    <tr><td class="item-name-cell">بسطرمة</td><td>135</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                    <tr><td class="item-name-cell">سلامي</td><td>135</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                    <tr><td class="item-name-cell">ميكس لحوم</td><td>135</td><td>200</td><td>275</td><td>250</td><td>325</td></tr>
+                    <tr><td class="item-name-cell">سجق</td><td>130</td><td>180</td><td>250</td><td>230</td><td>305</td></tr>
+                    <tr><td class="item-name-cell">شيش طاووق</td><td>135</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                    <tr><td class="item-name-cell">دجاج سوبريم</td><td>135</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                    <tr><td class="item-name-cell">دجاج كريسبي</td><td>135</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                    <tr><td class="item-name-cell">دجاج رانش</td><td>165</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                    <tr><td class="item-name-cell">دجاج باربيكيو</td><td>135</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                    <tr><td class="item-name-cell">تركي مدخن</td><td>135</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                    <tr><td class="item-name-cell">جمبري</td><td>-</td><td>230</td><td>300</td><td>280</td><td>350</td></tr>
+                    <tr><td class="item-name-cell">سي فود</td><td>-</td><td>255</td><td>315</td><td>305</td><td>365</td></tr>
+                    <tr><td class="item-name-cell">سي رانش</td><td>-</td><td>275</td><td>335</td><td>325</td><td>385</td></tr>
+                    <tr><td class="item-name-cell">تونة</td><td>135</td><td>190</td><td>265</td><td>240</td><td>315</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍕 بيتزا فور سيزون (تقدر تختار 4 أصناف)</h2>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th>النوع</th><th>كلاسيك (C)</th><th>ستافت كراست (S)</th>
+                    </tr>
+                    <tr><td class="item-name-cell">وسط M</td><td>215</td><td>265</td></tr>
+                    <tr><td class="item-name-cell">كبير L</td><td>285</td><td>335</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🫓 الفطير والبيتزا الشرقي</h2>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th rowspan="2">النوع</th>
+                        <th colspan="2">بيتزا شرقي</th>
+                        <th colspan="2">فطير شرقي</th>
+                    </tr>
+                    <tr>
+                        <th>وسط M</th><th>كبير L</th>
+                        <th>وسط M</th><th>كبير L</th>
+                    </tr>
+                    <tr><td class="item-name-cell">سجق بسطرمة كيري</td><td>265</td><td>345</td><td>285</td><td>365</td></tr>
+                    <tr><td class="item-name-cell">سجق</td><td>195</td><td>250</td><td>215</td><td>270</td></tr>
+                    <tr><td class="item-name-cell">سجق كيري</td><td>215</td><td>285</td><td>235</td><td>305</td></tr>
+                    <tr><td class="item-name-cell">بسطرمة</td><td>205</td><td>265</td><td>225</td><td>285</td></tr>
+                    <tr><td class="item-name-cell">بسطرمة كيري</td><td>235</td><td>300</td><td>255</td><td>320</td></tr>
+                    <tr><td class="item-name-cell">هوت دوج</td><td>175</td><td>230</td><td>195</td><td>250</td></tr>
+                    <tr><td class="item-name-cell">ميكس لحوم</td><td>230</td><td>310</td><td>250</td><td>330</td></tr>
+                    <tr><td class="item-name-cell">سجق بسطرمة</td><td>230</td><td>310</td><td>250</td><td>330</td></tr>
+                    <tr><td class="item-name-cell">شيش طاووق</td><td>230</td><td>310</td><td>250</td><td>330</td></tr>
+                    <tr><td class="item-name-cell">ميكس جبن</td><td>195</td><td>250</td><td>215</td><td>270</td></tr>
+                    <tr><td class="item-name-cell">خضار</td><td>195</td><td>250</td><td>215</td><td>270</td></tr>
+                    <tr><td class="item-name-cell">دجاج مشروم</td><td>215</td><td>285</td><td>235</td><td>305</td></tr>
+                    <tr><td class="item-name-cell">دجاج كرانشي</td><td>235</td><td>290</td><td>255</td><td>310</td></tr>
+                    <tr><td class="item-name-cell">دجاج رانش</td><td>235</td><td>290</td><td>255</td><td>310</td></tr>
+                    <tr><td class="item-name-cell">دجاج باربيكيو</td><td>235</td><td>290</td><td>255</td><td>310</td></tr>
+                    <tr><td class="item-name-cell">جمبري</td><td>270</td><td>360</td><td>290</td><td>380</td></tr>
+                    <tr><td class="item-name-cell">سي فود</td><td>285</td><td>375</td><td>305</td><td>395</td></tr>
+                    <tr><td class="item-name-cell">سي رانش</td><td>305</td><td>395</td><td>325</td><td>415</td></tr>
+                    <tr><td class="item-name-cell">تونة</td><td>215</td><td>295</td><td>235</td><td>315</td></tr>
+                </table>
+            </div>
+            
+            <h3 style="text-align: center; color: var(--main-red); margin-top: 20px;">مشلتت (Meshaltet)</h3>
+            <div class="simple-list">
+                <div class="simple-item"><span class="s-name">فطير مشلتت (M) - يقدم مع عسل أسود وقشطة وجبنة</span><span class="s-price">230</span></div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍝 باستا (Pasta)</h2>
+            <div class="simple-list">
+                <div class="simple-item"><span class="s-name">لازانيا</span><span class="s-price">145</span></div>
+                <div class="simple-item"><span class="s-name">باستا هوت دوج</span><span class="s-price">140</span></div>
+                <div class="simple-item"><span class="s-name">باستا خضار</span><span class="s-price">115</span></div>
+                <div class="simple-item"><span class="s-name">باستا دجاج</span><span class="s-price">145</span></div>
+                <div class="simple-item"><span class="s-name">باستا كريسبي</span><span class="s-price">145</span></div>
+                <div class="simple-item"><span class="s-name">باستا جمبري</span><span class="s-price">150</span></div>
+                <div class="simple-item"><span class="s-name">باستا سي فود</span><span class="s-price">180</span></div>
+                <div class="simple-item"><span class="s-name">اسباجتي بولونيز</span><span class="s-price">140</span></div>
+                <div class="simple-item"><span class="s-name">باستا دجاج رانش</span><span class="s-price">155</span></div>
+                <div class="simple-item"><span class="s-name">ميكس لحوم</span><span class="s-price">165</span></div>
+                <div class="simple-item"><span class="s-name">سجق</span><span class="s-price">140</span></div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🍟 مقبلات ورول يم يم</h2>
+            
+            <h3 style="color: var(--dark-red);">المقبلات (Appetizers)</h3>
+            <div class="simple-list">
+                <div class="simple-item"><span class="s-name">أصابع جبنة متبلة</span><span class="s-price">70</span></div>
+                <div class="simple-item"><span class="s-name">خبز بالثوم والجبنة</span><span class="s-price">65</span></div>
+                <div class="simple-item"><span class="s-name">خبز بالثوم سوبريم</span><span class="s-price">75</span></div>
+                <div class="simple-item"><span class="s-name">حلقات بصل متبلة</span><span class="s-price">60</span></div>
+                <div class="simple-item"><span class="s-name">بطاطس مقلية</span><span class="s-price">50</span></div>
+                <div class="simple-item"><span class="s-name">بطاطس مع صوص شيدر</span><span class="s-price">65</span></div>
+                <div class="simple-item"><span class="s-name">بطاطس ويدجز</span><span class="s-price">75</span></div>
+            </div>
+
+            <h3 style="color: var(--dark-red); margin-top: 15px;">رول يم يم (Roll Yum Yum)</h3>
+            <div class="simple-list">
+                <div class="simple-item"><span class="s-name">كرانشي</span><span class="s-price">145</span></div>
+                <div class="simple-item"><span class="s-name">سجق</span><span class="s-price">135</span></div>
+                <div class="simple-item"><span class="s-name">ميكس جبنة</span><span class="s-price">145</span></div>
+                <div class="simple-item"><span class="s-name">هوت دوج</span><span class="s-price">135</span></div>
+                <div class="simple-item"><span class="s-name">بيض بسطرمة</span><span class="s-price">145</span></div>
+                <div class="simple-item"><span class="s-name">بطاطس</span><span class="s-price">110</span></div>
+                <div class="simple-item"><span class="s-name">كريسبي فراخ</span><span class="s-price">145</span></div>
+                <div class="simple-item"><span class="s-name">دجاج جريل</span><span class="s-price">145</span></div>
+                <div class="simple-item"><span class="s-name">ميكس لحوم</span><span class="s-price">150</span></div>
+                <div class="simple-item"><span class="s-name">شيش طاووق</span><span class="s-price">135</span></div>
+            </div>
+
+            <h3 style="color: var(--dark-red); margin-top: 15px;">فرايد بولز (Polz Fried)</h3>
+            <div class="simple-list">
+                <div class="simple-item"><span class="s-name">ميكس لحوم</span><span class="s-price">165</span></div>
+                <div class="simple-item"><span class="s-name">ميكس جبن</span><span class="s-price">165</span></div>
+                <div class="simple-item"><span class="s-name">دجاج جريل</span><span class="s-price">165</span></div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🥞 فطير حلو (Sweet Feteer)</h2>
+            <div class="simple-list">
+                <div class="simple-item"><span class="s-name">فطيرة بغاشة</span><span class="s-price">75</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة كاستر</span><span class="s-price">95</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة نوتيلا موز</span><span class="s-price">190</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة مكسرات</span><span class="s-price">150</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة قشطة وبسبوسة</span><span class="s-price">185</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة وايت ولوتس</span><span class="s-price">170</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة بسبوسة وكنافة</span><span class="s-price">165</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة قشطة وعسل</span><span class="s-price">150</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة لوتس نوتيلا</span><span class="s-price">220</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة بلح</span><span class="s-price">185</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة فور سيزون</span><span class="s-price">240</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة اوريو</span><span class="s-price">150</span></div>
+                <div class="simple-item"><span class="s-name">فطيرة سكر</span><span class="s-price">65</span></div>
+            </div>
+
+            <h3 style="color: var(--dark-red); margin-top: 15px;">ميكس يم يم</h3>
+            <div class="simple-list">
+                <div class="simple-item"><span class="s-name">شيكولاتة</span><span class="s-price">170</span></div>
+                <div class="simple-item"><span class="s-name">لوتس</span><span class="s-price">170</span></div>
+                <div class="simple-item"><span class="s-name">اوريو</span><span class="s-price">170</span></div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2 class="section-title">🥤 المشروبات والإضافات</h2>
+            
+            <h3 style="color: var(--dark-red);">مشروبات</h3>
+            <div class="simple-list">
+                <div class="simple-item"><span class="s-name">مياه معدنية</span><span class="s-price">10</span></div>
+                <div class="simple-item"><span class="s-name">بيبسي</span><span class="s-price">25</span></div>
+            </div>
+
+            <h3 style="color: var(--dark-red); margin-top: 15px;">الإضافات (Extra Toppings)</h3>
+            <div class="simple-list" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));">
+                <div class="simple-item"><span class="s-name">ميكس جبن</span><span class="s-price">40</span></div>
+                <div class="simple-item"><span class="s-name">جبنة كيري</span><span class="s-price">45</span></div>
+                <div class="simple-item"><span class="s-name">دجاج</span><span class="s-price">40</span></div>
+                <div class="simple-item"><span class="s-name">ميكس لحوم</span><span class="s-price">40</span></div>
+                <div class="simple-item"><span class="s-name">سجق</span><span class="s-price">35</span></div>
+                <div class="simple-item"><span class="s-name">سي فود</span><span class="s-price">75</span></div>
+                <div class="simple-item"><span class="s-name">صوص رانش</span><span class="s-price">20</span></div>
+                <div class="simple-item"><span class="s-name">صوص باربيكيو</span><span class="s-price">20</span></div>
+                <div class="simple-item"><span class="s-name">صوص شيدر</span><span class="s-price">15</span></div>
+                <div class="simple-item"><span class="s-name">جمبري</span><span class="s-price">55</span></div>
+                <div class="simple-item"><span class="s-name">قشطة</span><span class="s-price">40</span></div>
+                <div class="simple-item"><span class="s-name">عسل أبيض</span><span class="s-price">30</span></div>
+                <div class="simple-item"><span class="s-name">مكسرات</span><span class="s-price">40</span></div>
+                <div class="simple-item"><span class="s-name">سكر بودرة</span><span class="s-price">10</span></div>
+                <div class="simple-item"><span class="s-name">صوص شيكولاتة بيضا</span><span class="s-price">25</span></div>
+                <div class="simple-item"><span class="s-name">صوص شيكولاتة</span><span class="s-price">25</span></div>
+                <div class="simple-item"><span class="s-name">نوتيلا</span><span class="s-price">45</span></div>
+                <div class="simple-item"><span class="s-name">بسكويت لوتس</span><span class="s-price">30</span></div>
+                <div class="simple-item"><span class="s-name">بسكويت أوريو</span><span class="s-price">30</span></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
